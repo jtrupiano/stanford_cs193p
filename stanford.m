@@ -14,6 +14,8 @@ int main (int argc, const char * argv[]) {
 
     NSLog(@"My home folder is at '%@'", path);
 	
+	NSLog(@"Process Name: '%@' Process ID: '%d'", [[NSProcessInfo processInfo] processName], [[NSProcessInfo processInfo] processIdentifier]);
+	
     [pool drain];
     return 0;
 }
