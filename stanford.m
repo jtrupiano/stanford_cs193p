@@ -3,6 +3,7 @@
 void section1();
 void section2();
 void section3();
+void section4();
 
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
@@ -10,6 +11,7 @@ int main (int argc, const char * argv[]) {
 	section1();
 	section2();
 	section3();
+	section4();
 		
     [pool drain];
     return 0;
@@ -41,10 +43,32 @@ void section3() {
 	for (NSString *key in [dict allKeys]) {
 		if ([key hasPrefix:@"Stanford"]) {
 			NSString *url = [dict valueForKey:key];
-			NSLog(@"%@", [NSString stringWithContentsOfURL:[NSURL URLWithString:url]]);
+			//NSLog(@"%@", [NSString stringWithContentsOfURL:[NSURL URLWithString:url]]);
+			NSLog(@"%@ does begin with Stanford", url);
 		} 
-		else {
-			NSLog(@"%@ does not begin with Stanford", key);
+	}
+}
+
+void section4() {
+	NSString *string = @"String me";
+	NSURL *url = [NSURL URLWithString:@"http://www.justfuckinggoogleit.com"];
+	NSProcessInfo *info = [NSProcessInfo processInfo];
+	NSDictionary *dict = [NSDictionary dictionary];
+	NSMutableString *mutable_string = @"Oh yeah, you can change me!";
+	
+	NSArray *array = [NSArray arrayWithObjects:string, url, info, dict, mutable_string, nil];
+	for (id item in array) {
+		NSLog(@"I am '%@'", item);
+		if ([item isMemberOfClass:[NSString class]]) {
+			NSLog(@"I am indeed a member of NSString");
+		}
+		if ([item isKindOfClass:[NSString class]]) {
+			NSLog(@"And I am a kind of NSString");
+		}
+		SEL sel = @selector(lowercaseString:);
+		if ([item respondsToSelector:sel]) {
+			NSLog(@"I do respond to lowercaseString with: %@", [item performSelector:sel]);
 		}
 	}
+	
 }
