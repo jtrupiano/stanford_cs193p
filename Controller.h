@@ -9,6 +9,12 @@
 	
 	IBOutlet PolygonShape* myPolygon;
 }
+
 - (IBAction)decrease;
 - (IBAction)increase;
+
+// private
+- (void)updateInterface;
+- (void)updatePolygon:(int)sides;
+
 @end
