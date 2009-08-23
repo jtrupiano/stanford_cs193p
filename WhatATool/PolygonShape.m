@@ -64,7 +64,7 @@
 }
 
 - (float)angleInDegrees {
-	return (180 * (numberOfSides - 2)) / numberOfSides;
+	return (float)(180 * (numberOfSides - 2)) / numberOfSides;
 }
 
 - (float)angleInRadians {
@@ -88,6 +88,6 @@
 }
 
 - (NSString*)description {
-	return [NSString stringWithFormat: @"Hello, I am a %d-sided polygon (aka a %@) with angles of %d degrees (%f radians).", numberOfSides, [self name], [self angleInDegrees], [self angleInRadians]];
+	return [NSString stringWithFormat: @"Hello, I am a %d-sided polygon (aka a %@) with angles of %.2f degrees (%.4f radians).", numberOfSides, [self name], [self angleInDegrees], [self angleInRadians]];
 }
 @end
