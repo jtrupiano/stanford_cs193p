@@ -1,0 +1,39 @@
+STEPS I HAD TO TAKE TO GET AN APP INSTALLED ON THE IPHONE
+
+1) Generate a CSR from Keychain: 
+  * KeyChain Access -> Certificate Assistant -> Request a Certificate from a Certificate Authority
+  * Fill in your Apple account's email address
+  * For 'Common Name' use your apple account identifier
+    * for me it was SmartLogic Solutions
+    * On the Program Portal, navigate to Team -> Contact Info and use the value in the Name field
+  * Check 'Saved to disk'
+2) Submit your CSR
+  * Program Portal -> Certificates -> Development -> "Submit CSR"
+3) Approve the CSR
+  * Program Portal -> Certificates -> Development
+4) Download the WWDR Intermediate Certificate
+  * Program Portal -> Certificates -> Development
+  * in the grey box underneath "Your Certificate" table
+5) Download the Certificate
+  * Program Portal -> Certificates -> Development -> Download
+  * in the table underneath "Your Certificate"
+6) Add the cert to the 'login' keychain
+  * Doubleclick cert after downloading, load it into the 'login' chain.
+  * Verify that the cert shows up under the private key when viewing Keys in Keychain
+7) Create an App ID for the new app
+  * Program Portal -> App IDs -> Create New App Id
+8) Create a Provisioning Profile
+  * Links the certificate, the account, and a single device (seems like you need one for each testing device)
+  * Program Portal -> Provisioning -> New Profile
+9) Download the Provisioning Profile
+  * Program Portal -> Provisioning -> Download (from the table)
+10) Add Provisioning Profile to your Application Build
+  * Plug in your iPhone
+  * Open up Xcode's Organizer (Window -> Organizer)
+  * Drag the provisioning profile you downloaded onto the device in the Organizer
+11) Build and run the project in the Xcode
+  * apple-R
+  * should install it directly onto your iPhone.
+  
+  
+**** I think that steps 1-6 can be omitted for any future apps.
