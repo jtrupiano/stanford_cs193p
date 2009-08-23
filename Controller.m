@@ -8,16 +8,12 @@
 }
 
 - (IBAction)decrease {
-    NSLog(@"I am the decrease function");
-	int new_side_count = myPolygon.numberOfSides - 1;
-	[self updatePolygon:new_side_count];
+	myPolygon.numberOfSides -= 1;
 	[self updateInterface];
 }
 
 - (IBAction)increase {
-    NSLog(@"I am the increase function");
-	int new_side_count = myPolygon.numberOfSides + 1;
-	[self updatePolygon:new_side_count];	
+	myPolygon.numberOfSides += 1;
 	[self updateInterface];
 }
 
@@ -29,17 +25,9 @@
 	decreaseButton.enabled = myPolygon.numberOfSides > myPolygon.minimumNumberOfSides ? YES : NO;
 }
 
-- (void)updatePolygon:(int)sides {
-	[myPolygon release];
-	myPolygon = [[PolygonShape alloc] init];
-	[myPolygon retain];
-	myPolygon.numberOfSides = sides;
-}
-
 - (void)awakeFromNib {
-	myPolygon = [[PolygonShape alloc] init];
+	myPolygon = [[PolygonShape alloc] initWithNumberOfSides:5 minimumNumberOfSides:3 maximumNumberOfSides:12];
 	[myPolygon retain];
-	[myPolygon setNumberOfSides: numberOfSidesLabel.text.integerValue];
 
 	[self updateInterface];	
 }
