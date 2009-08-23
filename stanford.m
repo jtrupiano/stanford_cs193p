@@ -1,9 +1,12 @@
 #import <Foundation/Foundation.h>
+#import "PolygonShape.h"
 
 void section1();
 void section2();
 void section3();
 void section4();
+void addPolygon(PolygonShape*, NSMutableArray*);
+void PrintPolygonInfo();
 
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
@@ -12,7 +15,8 @@ int main (int argc, const char * argv[]) {
 	section2();
 	section3();
 	section4();
-		
+	PrintPolygonInfo();
+	
     [pool drain];
     return 0;
 }
@@ -71,4 +75,34 @@ void section4() {
 		}
 	}
 	
+}
+
+void addPolygon(PolygonShape *poly, NSMutableArray *polygons) {
+	[polygons addObject:poly];
+	NSLog(@"%@", poly);
+}
+
+void PrintPolygonInfo() {
+	NSMutableArray *polygons = [[NSMutableArray alloc] init];
+	
+	PolygonShape *poly1 = [[PolygonShape alloc] init];
+	[poly1 setMinimumNumberOfSides:3];
+	[poly1 setMaximumNumberOfSides:7];
+	[poly1 setNumberOfSides:3];
+	addPolygon(poly1, polygons);
+	
+	PolygonShape *poly2 = [[PolygonShape alloc] initWithNumberOfSides:6 minimumNumberOfSides:5 maximumNumberOfSides:9];
+	addPolygon(poly2, polygons);
+	
+	PolygonShape *poly3 = [[PolygonShape alloc] initWithNumberOfSides:12 minimumNumberOfSides:9 maximumNumberOfSides:12];
+	addPolygon(poly3, polygons);
+	
+	for (PolygonShape *poly in polygons) {
+		[poly setNumberOfSides:10];
+	}
+	
+	[poly3 release];
+	[poly2 release];
+	[poly1 release];
+	[polygons release];
 }
