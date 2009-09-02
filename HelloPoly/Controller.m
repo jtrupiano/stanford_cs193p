@@ -47,6 +47,8 @@
 		NSLog(@"Can't find sides from NSUserDefaults");
 	}
 	myPolygon.numberOfSides = sides;
+	myPolygon.maximumNumberOfSides = 12;
+	myPolygon.minimumNumberOfSides = 3;
 
 	[self updateInterface];
 }
