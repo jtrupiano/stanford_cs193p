@@ -8,10 +8,9 @@
 @interface PolygonView : UIView {
 
 	IBOutlet Controller *myController;
+	IBOutlet PolygonShape *myPolygon;
 	IBOutlet UILabel *polygonName;
 }
-
-- (PolygonShape*)myPolygon;
 
 + (NSArray*)pointsForPolygonInRect:(CGRect)rect numberOfSides:(int)numberOfSides;
 

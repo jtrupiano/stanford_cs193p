@@ -3,12 +3,12 @@
 @implementation PolygonView
 
 - (void)drawRect:(CGRect)rect {
-	NSLog(@"Drawing the PolygonView!  My polygon has %d sides.", [[self myPolygon] numberOfSides]);
+	NSLog(@"Drawing the PolygonView!  My polygon has %d sides.", [myPolygon numberOfSides]);
 
 	[[UIColor grayColor] set];
 	UIRectFill([self bounds]);
 	
-	NSArray *points = [PolygonView pointsForPolygonInRect:[self bounds] numberOfSides: [[self myPolygon] numberOfSides]];
+	NSArray *points = [PolygonView pointsForPolygonInRect:[self bounds] numberOfSides: myPolygon.numberOfSides];
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextBeginPath(context);
 
@@ -27,15 +27,11 @@
 
 	CGContextClosePath(context);
 	
-	[polygonName setText: [[self myPolygon] name]];
+	[polygonName setText: myPolygon.name];
 	
 	[[UIColor redColor] setFill];
 	CGContextDrawPath(context, kCGPathFillStroke);
 	
-}
-
-- (PolygonShape*)myPolygon {
-	return [myController myPolygon];
 }
 
 + (NSArray*)pointsForPolygonInRect:(CGRect)rect numberOfSides:(int)numberOfSides {

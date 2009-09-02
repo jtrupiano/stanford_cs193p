@@ -2,8 +2,6 @@
 
 @implementation Controller
 
-@synthesize myPolygon;
-
 - (void)dealloc {
 	[myPolygon release];
 	[super dealloc];

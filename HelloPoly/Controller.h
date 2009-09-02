@@ -14,8 +14,6 @@
 	IBOutlet PolygonShape *myPolygon;
 }
 
-@property (readonly) PolygonShape* myPolygon;
-
 - (IBAction)decrease;
 - (IBAction)increase;
 
