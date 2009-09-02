@@ -12,16 +12,22 @@
 }
 
 - (IBAction)decrease {
-	myPolygon.numberOfSides -= 1;
-	[self updateInterface];
+	[self updateInterface:myPolygon.numberOfSides - 1];
 }
 
 - (IBAction)increase {
-	myPolygon.numberOfSides += 1;
-	[self updateInterface];
+	[self updateInterface:myPolygon.numberOfSides + 1];
 }
 
-- (void)updateInterface {
+- (IBAction)sliderChanged:(id)sender {
+	int value = [(UISlider*)sender value];
+	[self updateInterface:value];
+}
+
+- (void)updateInterface:(int)sides {
+	myPolygon.numberOfSides = sides;
+	[slider setValue:sides];
+	
 	NSLog(@"Updating UI, my polygon is: %@", myPolygon);
 
 	numberOfSidesLabel.text = [NSString stringWithFormat:@"%d", myPolygon.numberOfSides];
@@ -48,9 +54,13 @@
 	}
 	myPolygon.maximumNumberOfSides = 12;
 	myPolygon.minimumNumberOfSides = 3;
-	myPolygon.numberOfSides = sides;
 
-	[self updateInterface];
+	// set up slider
+	[slider setContinuous: NO];
+	[slider setMinimumValue: myPolygon.minimumNumberOfSides];
+	[slider setMaximumValue: myPolygon.maximumNumberOfSides];
+	
+	[self updateInterface:sides];
 }
 
 @end
