@@ -8,7 +8,7 @@
 @interface PolygonView : UIView {
 
 	IBOutlet Controller *myController;
-
+	IBOutlet UILabel *polygonName;
 }
 
 - (PolygonShape*)myPolygon;

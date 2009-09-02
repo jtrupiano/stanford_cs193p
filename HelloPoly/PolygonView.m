@@ -27,6 +27,8 @@
 
 	CGContextClosePath(context);
 	
+	[polygonName setText: [[self myPolygon] name]];
+	
 	[[UIColor redColor] setFill];
 	CGContextDrawPath(context, kCGPathFillStroke);
 	
@@ -38,7 +40,7 @@
 
 + (NSArray*)pointsForPolygonInRect:(CGRect)rect numberOfSides:(int)numberOfSides {
 	CGPoint center = CGPointMake(rect.size.width / 2.0, rect.size.height / 2.0);
-	float radius = 0.9 * center.x;
+	float radius = 0.75 * center.x;
 	NSMutableArray *result = [NSMutableArray array];
 	float angle = (2.0 * M_PI) / numberOfSides;
 	float exteriorAngle = M_PI - angle;
