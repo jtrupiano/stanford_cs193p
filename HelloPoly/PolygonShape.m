@@ -20,6 +20,7 @@
 }
 
 - (id)initWithNumberOfSides:(int)sides minimumNumberOfSides:(int)min maximumNumberOfSides:(int)max {
+	NSLog(@"I am a Polygon being instantiated");
 	if (self = [super init]) {
 		[self setMinimumNumberOfSides:min];
 		[self setMaximumNumberOfSides:max];
