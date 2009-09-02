@@ -30,8 +30,8 @@
 	[polygonName setText: myPolygon.name];
 	
 	[[UIColor redColor] setFill];
-	CGContextDrawPath(context, kCGPathFillStroke);
-	
+	[[UIColor blackColor] setStroke];
+	CGContextDrawPath(context, kCGPathFillStroke);	
 }
 
 + (NSArray*)pointsForPolygonInRect:(CGRect)rect numberOfSides:(int)numberOfSides {
