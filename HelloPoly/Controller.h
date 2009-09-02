@@ -21,5 +21,6 @@
 
 // private
 - (void)updateInterface;
+- (void)updateUserPreferences;
 
 @end

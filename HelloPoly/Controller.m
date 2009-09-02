@@ -31,10 +31,24 @@
 	decreaseButton.enabled = myPolygon.numberOfSides > myPolygon.minimumNumberOfSides ? YES : NO;
 	
 	[polygonView setNeedsDisplay];
+	
+	[self updateUserPreferences];
+}
+
+- (void)updateUserPreferences {
+	NSLog(@"Saving the number of polygon sides as %d", myPolygon.numberOfSides);
+	[[NSUserDefaults standardUserDefaults] setInteger:myPolygon.numberOfSides forKey:@"polygonSides"];
 }
 
 - (void)awakeFromNib {
-	myPolygon = [[PolygonShape alloc] initWithNumberOfSides:5 minimumNumberOfSides:3 maximumNumberOfSides:12];
+	int sides = [[NSUserDefaults standardUserDefaults] integerForKey:@"polygonSides"];
+	if (sides) {
+		NSLog(@"Restoring sides from NSUserDefaults: %d", sides);
+	} else {
+		sides = 5;
+		NSLog(@"Can't find sides from NSUserDefaults");
+	}
+	myPolygon.numberOfSides = sides;
 
 	[self updateInterface];
 }
