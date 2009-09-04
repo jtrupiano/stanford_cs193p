@@ -19,6 +19,7 @@
     navController = [[UINavigationController alloc] init];
 	
 	PersonListViewController *controller = [[PersonListViewController alloc] initWithNibName:@"PersonListView" bundle:nil];
+	controller.title = @"All the pretty people";
 	[navController pushViewController:controller animated:YES];
 	[controller release];
 	

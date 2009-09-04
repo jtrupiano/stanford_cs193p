@@ -13,6 +13,9 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		525A81931050813400A5148B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A81921050813400A5148B /* Person.m */; };
+		525A8229105090C300A5148B /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525A8228105090C300A5148B /* PersonViewController.m */; };
+		525A822B1050912600A5148B /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525A822A1050912600A5148B /* PersonView.xib */; };
 		525CA5E0104F52DB0034724E /* PersonListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525CA5DF104F52DB0034724E /* PersonListViewController.m */; };
 		525CA5EB104F53400034724E /* PersonListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525CA5EA104F53400034724E /* PersonListView.xib */; };
 		525CA5F5104F559E0034724E /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 525CA5F4104F559E0034724E /* avatar.jpg */; };
@@ -28,6 +31,11 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Presence_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Presence_Prefix.pch; sourceTree = "<group>"; };
+		525A81911050813400A5148B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		525A81921050813400A5148B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		525A8227105090C300A5148B /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		525A8228105090C300A5148B /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		525A822A1050912600A5148B /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
 		525CA5DE104F52DB0034724E /* PersonListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonListViewController.h; sourceTree = "<group>"; };
 		525CA5DF104F52DB0034724E /* PersonListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonListViewController.m; sourceTree = "<group>"; };
 		525CA5EA104F53400034724E /* PersonListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonListView.xib; sourceTree = "<group>"; };
@@ -52,11 +60,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				525CA5EA104F53400034724E /* PersonListView.xib */,
+				525A81911050813400A5148B /* Person.h */,
+				525A81921050813400A5148B /* Person.m */,
 				1D3623240D0F684500981E51 /* PresenceAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PresenceAppDelegate.m */,
 				525CA5DE104F52DB0034724E /* PersonListViewController.h */,
 				525CA5DF104F52DB0034724E /* PersonListViewController.m */,
+				525CA5EA104F53400034724E /* PersonListView.xib */,
+				525A8227105090C300A5148B /* PersonViewController.h */,
+				525A8228105090C300A5148B /* PersonViewController.m */,
+				525A822A1050912600A5148B /* PersonView.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -155,6 +168,7 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				525CA5EB104F53400034724E /* PersonListView.xib in Resources */,
 				525CA5F5104F559E0034724E /* avatar.jpg in Resources */,
+				525A822B1050912600A5148B /* PersonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +182,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* PresenceAppDelegate.m in Sources */,
 				525CA5E0104F52DB0034724E /* PersonListViewController.m in Sources */,
+				525A81931050813400A5148B /* Person.m in Sources */,
+				525A8229105090C300A5148B /* PersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
